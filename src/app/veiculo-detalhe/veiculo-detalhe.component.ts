@@ -11,7 +11,7 @@ import { ApiService } from '../api.service';
 export class VeiculoDetalheComponent implements OnInit {
 
   veiculo: Veiculo = { 
-    _id: '',
+    id: '',
     veiculo: '',
     marca: '',
     ano: null,

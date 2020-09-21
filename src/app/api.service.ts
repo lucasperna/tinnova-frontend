@@ -36,7 +36,7 @@ export class ApiService {
   addVeiculo (veiculo): Observable<Veiculo> {
     return this.http.post<Veiculo>(apiUrl, veiculo, httpOptions).pipe(
       // tslint:disable-next-line:no-shadowed-variable
-      tap((veiculo: Veiculo) => console.log(`adicionou o veiculo com w/ id=${veiculo._id}`)),
+      tap((veiculo: Veiculo) => console.log(`adicionou o veiculo com w/ id=${veiculo.id}`)),
       catchError(this.handleError<Veiculo>('addVeiculo'))
     );
   }

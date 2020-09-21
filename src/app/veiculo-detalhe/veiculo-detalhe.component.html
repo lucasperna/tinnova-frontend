@@ -16,14 +16,14 @@
           <dt>Ano:</dt>
           <dd>{{veiculo.ano}}</dd>
           <dt>Criado em:</dt>
-          <dd>{{veiculo.created | date}}</dd>
+          <dd>{{veiculo.created | date: 'dd/MM/yyyy HH:mm:ss'}}</dd>
           <dt>Atualizado em:</dt>
-          <dd>{{veiculo.updated | date}}</dd>
+          <dd>{{veiculo.updated | date: 'dd/MM/yyyy HH:mm:ss'}}</dd>
         </dl>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-flat-button color="primary" class="teste" [routerLink]="['/veiculo-editar', veiculo._id]"><mat-icon>edit</mat-icon> Editar</button>
-        <button mat-flat-button color="warn" (click)="deleteVeiculo(veiculo._id)"><mat-icon>delete</mat-icon> Excluir</button>
+        <button mat-flat-button color="primary" class="teste" [routerLink]="['/veiculo-editar', veiculo.id]"><mat-icon>edit</mat-icon> Editar</button>
+        <button mat-flat-button color="warn" (click)="deleteVeiculo(veiculo.id)"><mat-icon>delete</mat-icon> Excluir</button>
       </mat-card-actions>
     </mat-card>
   </div>

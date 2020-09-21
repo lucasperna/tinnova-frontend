@@ -9,7 +9,7 @@ import { ApiService } from '../api.service';
 })
 export class VeiculosComponent implements OnInit {
 
-  displayedColumns: string[] = [ "veiculo", "marca", "ano", "descricao", "vendido", "created", "updated"];
+  displayedColumns: string[] = [ 'veiculo', 'marca', 'ano', 'descricao', 'vendido', 'created', 'updated', 'acao'];
   dataSource: Veiculo[];
   isLoadingResults = true;
   

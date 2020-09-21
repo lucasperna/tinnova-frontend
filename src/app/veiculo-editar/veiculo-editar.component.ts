@@ -10,7 +10,7 @@ import { ApiService } from '../api.service';
 })
 export class VeiculoEditarComponent implements OnInit {
 
-  _id: String = '';
+  id: String = '';
   veiculoForm: FormGroup;
   veiculo: String='';
   marca: String='';
@@ -42,7 +42,7 @@ export class VeiculoEditarComponent implements OnInit {
 
    getVeiculo(id) {
     this.api.getVeiculo(id).subscribe(data => {
-      this._id = data._id;
+      this.id = data.id;
       this.veiculoForm.setValue({
         veiculo: data.veiculo,
         marca: data.marca,
@@ -57,10 +57,10 @@ export class VeiculoEditarComponent implements OnInit {
   
   updateVeiculo(form: NgForm) {
     this.isLoadingResults = true;
-    this.api.updateVeiculo(this._id, form)
+    this.api.updateVeiculo(this.id, form)
       .subscribe(res => {
           this.isLoadingResults = false;
-          this.router.navigate(['/veiculo-detalhe/' + this._id]);
+          this.router.navigate(['/veiculo-detalhe/' + this.id]);
         }, (err) => {
           console.log(err);
           this.isLoadingResults = false;

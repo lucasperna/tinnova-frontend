@@ -21,8 +21,6 @@ export class VeiculoNovoComponent implements OnInit {
       'ano' : [null, Validators.required],
       'descricao' : [null, Validators.required],
       'vendido' : [null, Validators.required],
-      'created' : [null, Validators.required],
-      'updated' : [null, Validators.required]
     });
   }
 
@@ -30,7 +28,7 @@ export class VeiculoNovoComponent implements OnInit {
     this.isLoadingResults = true;
     this.api.addVeiculo(form)
       .subscribe(res => {
-          const id = res['_id'];
+          const id = res['id'];
           this.isLoadingResults = false;
           this.router.navigate(['/veiculo-detalhe', id]);
         }, (err) => {

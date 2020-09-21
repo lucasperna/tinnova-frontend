@@ -1,5 +1,5 @@
 export class Veiculo {
-    _id: string;
+    id: string;
     veiculo: string;
     marca: string;
     ano: number;
